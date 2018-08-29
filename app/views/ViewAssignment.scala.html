@@ -1,0 +1,83 @@
+@(data:Seq[models.AssignmentRepo])(implicit requestHeader:RequestHeader,flash:Flash)
+@import helper._
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View User</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon"  href="@routes.Assets.versioned("images/icons/favicon.ico")"/>
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/bootstrap/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("fonts/font-awesome-4.7.0/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("fonts/Linearicons-Free-v1.0.0/icon-font.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/animate/animate.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/css-hamburgers/hamburgers.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/select2/select2.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/util.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")">
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+            <form class="login100-form validate-form" action="/register" method="POST">
+                @CSRF.formField
+                <span class="login100-form-title p-b-55">
+						View Assignment
+					</span>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Details</th>
+
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for(assignment <- data){
+                    <tr>
+                        <td>@assignment.title</td>
+                        <td>@assignment.Details</td>
+
+                        <td class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn p-l-50 p-r-50 p-t-72 p-b-50">
+                                <div class="login100-form-bgbtn"></div>
+
+                                <button class="login100-form-btn">
+                                    Delete
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    }
+                    </tbody>
+                </table>
+
+            </form>
+
+
+            <div class="container-login100-form-btn">
+                <div class="wrap-login100-form-btn">
+                    <div class="login100-form-bgbtn"></div>
+                    <a class="txt1 bo1 hov1" href="@routes.HomeController.index">
+
+                        <button class="login100-form-btn">
+                            Sign Out
+                        </button>
+                    </a>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="@routes.Assets.versioned(" vendor/jquery/jquery-3.2.1.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/bootstrap/js/popper.js")"></script>
+<script src="@routes.Assets.versioned(" vendor/bootstrap/js/bootstrap.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/select2/select2.min.js")"></script>
+<script src="@routes.Assets.versioned(" javascripts/main.js")"></script>
+
+</body>
+</html>

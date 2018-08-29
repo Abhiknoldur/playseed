@@ -1,0 +1,32 @@
+@()(implicit requestHeader:RequestHeader)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/bootstrap/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("fonts/font-awesome-4.7.0/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("fonts/Linearicons-Free-v1.0.0/icon-font.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/animate/animate.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/css-hamburgers/hamburgers.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/select2/select2.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/util.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="@routes.HomeController.profile">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@routes.HomeController.viewAssignment">View assignment</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@routes.HomeController.viewUser">View User</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@routes.HomeController.addAssignmentIndex">Add Assignment</a>
+        </li>
+    </ul>
+</nav>

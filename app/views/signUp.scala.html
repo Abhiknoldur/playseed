@@ -1,0 +1,138 @@
+@()(implicit requestHeader:RequestHeader)
+
+@import helper._
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SignUp</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="@routes.Assets.versioned("images/icons/favicon.ico")">
+    <link rel="icon" href="@routes.Assets.versioned("images/icons/favicon.ico")"/>
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/bootstrap/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("fonts/font-awesome-4.7.0/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/animate/animate.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/css-hamburgers/hamburgers.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("vendor/select2/select2.min.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/util.css")">
+    <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")">
+</head>
+<body style="background-color: #999999;">
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+
+        <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+            <form class="login100-form validate-form" action="/signUp" method="POST">
+                @CSRF.formField
+					<span class="login100-form-title p-b-59">
+						Sign Up
+					</span>
+
+                <div class="wrap-input100 validate-input" data-validate="Last Name is required">
+                    <span class="label-input100">First Name</span>
+                    <input class="input100" type="text" name="fName" placeholder="First Name...">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Middle Name is required">
+                    <span class="label-input100">Middle Name</span>
+                    <input class="input100" type="text" name="mName" placeholder="Middle Name...">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Last Name is required">
+                    <span class="label-input100">Last Name</span>
+                    <input class="input100" type="text" name="lName" placeholder="Last Name...">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="User Name is required">
+                    <span class="label-input100">UserName</span>
+                    <input class="input100" type="text" name="userName" placeholder="User Name...">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                    <span class="label-input100">Password</span>
+                    <input class="input100" type="password" name="passwordGroup.password" placeholder="*************">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+                    <span class="label-input100">Repeat Password</span>
+                    <input class="input100" type="password" name="passwordGroup.confirmPassword" placeholder="*************">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Mobile Number is required">
+                    <span class="label-input100">Mobile Number</span>
+                    <input class="input100" type="text" name="mobile" placeholder="Enter 10 digit number">
+                    <span class="focus-input100"></span>
+                </div>
+
+
+                <div class="wrap-input100 validate-input" data-validate = "Age is required">
+                    <span class="label-input100">Age</span>
+                    <input class="input100" type="number" name="age" placeholder="between 18-75">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Gender is required">
+                    <span class="label-input100">Gender</span>
+                <div class="radio">
+                    <label><input type="radio" name="gender" value="male" checked>Male</label>
+                    <label><input type="radio" name="gender" value="Female">Female</label>
+                </div>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "Age is required">
+                    <span class="label-input100">Hobbies</span>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="hobbies" value="">Gaming</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="hobbies" value="">Sports</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="hobbies" value="" >Reading</label>
+                    </div>
+                </div>
+
+
+
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <a class="txt1 bo1 hov1" href="@routes.HomeController.profile">
+
+                        <button class="login100-form-btn">
+                            Sign Up
+                        </button>
+                        </a>
+                    </div>
+
+                    <a href="@routes.HomeController.signInIndex" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+                        Sign in
+                        <i class="fa fa-long-arrow-right m-l-5"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="@routes.Assets.versioned("vendor/jquery/jquery-3.2.1.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/animsition/js/animsition.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/bootstrap/js/popper.js")"></script>
+<script src="@routes.Assets.versioned("vendor/bootstrap/js/bootstrap.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/select2/select2.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/daterangepicker/moment.min.js")"></script>
+<script src="@routes.Assets.versioned("vendor/daterangepicker/daterangepicker.js")"></script>
+<script src="@routes.Assets.versioned("vendor/countdowntime/countdowntime.js")"></script>
+<script src="@routes.Assets.versioned("javascripts/main.js")"></script>
+
+</body>
+</html>
